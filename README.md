@@ -1,27 +1,25 @@
 # PruebaTecnicaAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Con el script `ng serve` levantamos el servidor en modo desarrollo. Navegando a `http://localhost:4200/` accedemos a la Aplicación. La aplicación cuenta con auto-realod el cual escucha cualquier cambio en algún archivo de la misma app que se haga.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Con el script `ng build` compilamos el proyecto en modo de desarrollo. Los archivos compilados son generados en el directorio `dist/`.
 
-## Running unit tests
+## ESLint
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Con el script `npm run lint` comprobamos todo el código y hacemos un fix general con las reglas aplicadas en Eslint.
 
-## Running end-to-end tests
+## Feedback
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+En este proyecto fue integrado ESLint y Prettier para tener un mayor órden en el código. Se usó Material Angular como motor de estructuración y diseño.
 
-## Further help
+En cuanto al feedback lo que mejoraría primero es el código, hay cosas que pueden minimizarse, funciones y variables que pueden no usarse y que todo el código esté más ordenado y legible. A las funciones les agregaría comentarios para no tener que ir a cada función para ver que retorna, que parámetros espera o que hace. Luego en cuanto al Login implementaría algún tipo de storage para guardar la sesión del usuario, algun tipo de Cookie para que expire en x tiempo, para que el Login sea un poco más real. Claramente en la prueba técnica había una API para consumir y todo debía ser FrontEnd, pero yo haría un Backend para tener bien controlado que información llega a la Aplicación. Angular tiene problemas de renderización si las cosas no se hacen bien, y yo creo que la aplicación posee esos problemas, e incluso se me ha olvidado controlar variables en null o undefined, eso también lo corregiría. El diseño me ha gustado pero no el componente que he usado para el mismo ( Material Angular ), en cada componente que queremo usar pide importar el módulo en el archivo app.module. El Inicio de Sesión con Google no me ha terminado de gustar, funciona, pero podría funcionar mejor e incluso hay funciones en "deprecated" que podría corregír.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Creo que pueden haber mas cosas pero que me acuerde, por el momento son esas.
+
+Google me pidió configurar unas Credenciales de tipo OAUTH en la consola para desarrolladores el cual tuve que hacerlo para que me de un ID y eso me dé lugar a la API para iniciar sesión con una Cuenta de Google. Actualmente el Inicio de Sesión funciona solo con mi cuenta de GMAIL, y como se configuró para modo de testeo, la cuenta de GMAIL con la que se intente loguear debo agregarla a una "lista" para darle permiso a esa cuenta que lea la API de Google usando mi cuenta como tunel. Es importante saber eso por si el inicio de sesión no funciona.
